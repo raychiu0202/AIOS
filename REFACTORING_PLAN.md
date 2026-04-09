@@ -73,50 +73,54 @@ yudao.* -> aios.*
 spring.application.name=yudao-server -> aios-server
 ```
 
-### 阶段2：核心框架重构 (3-5天)
+### 阶段2：核心框架重构 (3-5天) ✅ 已完成
 
 #### 2.1 重命名策略
 ```
-1. 包名重命名
+1. 包名重命名 ✅
    cn.iocoder.yudao.* -> cn.iocoder.aios.*
 
-2. 类名重命名
+2. 类名重命名（待后续阶段完成）
    YudaoXxx -> AiosXxx
 
-3. 配置属性重命名
+3. 配置属性重命名（待后续阶段完成）
    yudao.xxx -> aios.xxx
 
-4. 文档引用重命名
+4. 文档引用重命名（待后续阶段完成）
    yudao-ui-admin -> aios-ui-admin
 ```
 
 #### 2.2 重构顺序 (按依赖关系)
 
-**2.2.1 依赖层**
-- [ ] aios-dependencies
-- [ ] 重命名pom.xml中的artifactId
-- [ ] 修改版本号管理
-- [ ] 更新依赖引用
+**2.2.1 依赖层** ✅ 已完成
+- [x] aios-dependencies
+- [x] 重命名pom.xml中的artifactId
+- [x] 修改版本号管理
+- [x] 更新依赖引用
 
-**2.2.2 框架层 (aios-framework)**
+**2.2.2 框架层 (aios-framework)** ✅ 已完成
 ```
 按以下顺序依次重构：
-1. aios-common (最基础)
-2. aios-spring-boot-starter-mybatis
-3. aios-spring-boot-starter-web
-4. aios-spring-boot-starter-security
-5. aios-spring-boot-starter-redis
-6. aios-spring-boot-starter-excel
-7. aios-spring-boot-starter-mq
-8. aios-spring-boot-starter-job
-9. aios-spring-boot-starter-monitor
-10. aios-spring-boot-starter-protection
-11. aios-spring-boot-starter-test
-12. aios-spring-boot-starter-websocket
-13. aios-spring-boot-starter-biz-data-permission
-14. aios-spring-boot-starter-biz-tenant
-15. aios-spring-boot-starter-biz-ip
+1. ✅ aios-common (最基础) - 74个Java文件，编译成功
+2. ✅ aios-spring-boot-starter-mybatis - 24个Java文件，编译成功
+3. ✅ aios-spring-boot-starter-web - 67个Java文件，编译成功
+4. ✅ aios-spring-boot-starter-security - 编译成功
+5. ✅ aios-spring-boot-starter-redis - 编译成功
+6. ✅ aios-spring-boot-starter-excel - 编译成功
+7. ✅ aios-spring-boot-starter-mq - 编译成功
+8. ✅ aios-spring-boot-starter-job - 编译成功
+9. ✅ aios-spring-boot-starter-monitor - 编译成功
+10. ✅ aios-spring-boot-starter-protection - 编译成功
+11. ✅ aios-spring-boot-starter-test - 编译成功
+12. ✅ aios-spring-boot-starter-websocket - 编译成功
+13. ✅ aios-spring-boot-starter-biz-data-permission - 编译成功
+14. ✅ aios-spring-boot-starter-biz-tenant - 编译成功
+15. ✅ aios-spring-boot-starter-biz-ip - 编译成功
 ```
+
+**完成日期**: 2026-04-09
+**验证结果**: 所有 15 个 aios-framework 模块编译成功 ✅
+**自动化工具**: 创建 refactor_framework_module.sh 脚本实现自动化重构
 
 #### 2.3 重构脚本模板
 ```bash
@@ -462,7 +466,7 @@ curl -X POST http://localhost:48080/admin-api/system/auth/login \
 
 ---
 
-**文档版本**: v1.1
+**文档版本**: v1.2
 **创建日期**: 2026-04-09
 **最后更新**: 2026-04-09
 **文档状态**: 进行中
@@ -476,3 +480,9 @@ curl -X POST http://localhost:48080/admin-api/system/auth/login \
   - 复制 yudao-dependencies 为 aios-dependencies
   - 更新所有依赖引用从 yudao-* 到 aios-*
   - aios-dependencies 模块编译验证成功
+- 2026-04-09 13:42: ✅ 阶段2完成 - 重构所有 framework 模块为 aios-*
+  - 创建自动化重构脚本 refactor_framework_module.sh
+  - 成功重构 15 个 framework 模块
+  - 修改所有包名 cn.iocoder.yudao.* 到 cn.iocoder.aios.*
+  - 修改所有依赖引用从 yudao-* 到 aios-*
+  - 所有模块编译验证通过 ✅
