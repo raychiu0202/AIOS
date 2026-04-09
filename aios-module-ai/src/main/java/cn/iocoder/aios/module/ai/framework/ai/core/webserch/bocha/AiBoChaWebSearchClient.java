@@ -96,7 +96,7 @@ public class AiBoChaWebSearchClient implements AiWebSearchClient {
      * 网页搜索请求参数
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record WebSearchRequest(
+    public static class WebSearchRequest(
             String query,
             Boolean summary,
             Integer count
@@ -110,7 +110,7 @@ public class AiBoChaWebSearchClient implements AiWebSearchClient {
      * 网页搜索响应
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record WebSearchResponse(
+    public static class WebSearchResponse(
             WebSearchWebPages webPages
     ) {
     }
@@ -119,7 +119,7 @@ public class AiBoChaWebSearchClient implements AiWebSearchClient {
      * 网页搜索结果
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record WebSearchWebPages(
+    public static class WebSearchWebPages(
             String webSearchUrl,
             Long totalEstimatedMatches,
             List<WebPageValue> value,
@@ -130,7 +130,7 @@ public class AiBoChaWebSearchClient implements AiWebSearchClient {
          * 网页结果值
          */
         @JsonInclude(value = JsonInclude.Include.NON_NULL)
-        public record WebPageValue(
+        public static class WebPageValue(
                 String id,
                 String name,
                 String url,

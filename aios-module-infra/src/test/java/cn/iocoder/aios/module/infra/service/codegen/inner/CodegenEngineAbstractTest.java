@@ -41,7 +41,7 @@ public abstract class CodegenEngineAbstractTest extends BaseMockitoUnitTest {
 
     @Spy
     protected CodegenProperties codegenProperties = new CodegenProperties()
-            .setBasePackage("cn.iocoder.yudao");
+            .setBasePackage("cn.iocoder.aios");
 
     @BeforeEach
     public void setUp() {

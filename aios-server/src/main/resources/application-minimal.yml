@@ -1,0 +1,22 @@
+server:
+  port: 48080
+
+spring:
+  autoconfigure:
+    # 排除数据权限自动配置，解决启动问题
+    exclude:
+      - cn.iocoder.aios.framework.datapermission.config.AiosDataPermissionAutoConfiguration
+      - cn.iocoder.aios.framework.datapermission.config.AiosDeptDataPermissionAutoConfiguration
+
+# 芋道配置项
+aios:
+  captcha:
+    enable: false
+  security:
+    mock-enable: true
+  demo: false
+
+# 日志配置
+logging:
+  level:
+    root: INFO

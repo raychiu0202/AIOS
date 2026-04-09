@@ -812,7 +812,7 @@ public class BpmTaskServiceImpl implements BpmTaskService {
                 BpmCommentTypeEnum.REJECT.formatComment(reqVO.getReason()));
         // 2.3 如果当前任务时被加签的，则加它的根任务也标记成未通过
         // 疑问：为什么要标记未通过呢？
-        // 回答：例如说 A 任务被向前加签除 B 任务时，B 任务被审批不通过，此时 A 会被取消。而 yudao-ui-admin-vue3 不展示“已取消”的任务，导致展示不出审批不通过的细节。
+        // 回答：例如说 A 任务被向前加签除 B 任务时，B 任务被审批不通过，此时 A 会被取消。而 aios-ui-admin-vue3 不展示“已取消”的任务，导致展示不出审批不通过的细节。
         if (task.getParentTaskId() != null) {
             String rootParentId = getTaskRootParentId(task);
             updateTaskStatusAndReason(rootParentId, BpmTaskStatusEnum.REJECT.getStatus(),

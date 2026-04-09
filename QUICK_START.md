@@ -1,4 +1,4 @@
-# ruoyi-vue-pro 快速开始指南
+# AIOS 快速开始指南
 
 ## 1. 环境准备
 
@@ -22,7 +22,7 @@ GRANT ALL PRIVILEGES ON ry_vue.* TO 'wms'@'localhost';
 FLUSH PRIVILEGES;
 
 -- 导入SQL脚本
-mysql -u wms -pWms@2024 ry_vue < /path/to/ruoyi-vue-pro/sql/ry_vue_2026.01.sql
+mysql -u wms -pWms@2024 ry_vue < /path/to/AIOS/sql/ry_vue_2026.01.sql
 ```
 
 ## 2. 项目启动
@@ -32,19 +32,19 @@ mysql -u wms -pWms@2024 ry_vue < /path/to/ruoyi-vue-pro/sql/ry_vue_2026.01.sql
 #### 方式一：使用Maven命令
 ```bash
 # 进入项目根目录
-cd /Users/ray/Documents/projects/ruoyi-vue-pro
+cd /Users/ray/Documents/projects/AIOS
 
 # 编译项目（首次运行需要）
 mvn clean compile -Dmaven.test.skip=true -f pom.xml
 
 # 运行后端服务
-mvn spring-boot:run -pl yudao-server
+mvn spring-boot:run -pl aios-server
 ```
 
 #### 方式二：使用IDE
 1. 使用 IDEA 或 VSCode 打开项目
-2. 选择 `yudao-server` 模块
-3. 运行 `RuoyiApplication.java` 主类
+2. 选择 `aios-server` 模块
+3. 运行 `AiosApplication.java` 主类
 
 #### 方式三：使用jar包
 ```bash
@@ -52,7 +52,7 @@ mvn spring-boot:run -pl yudao-server
 mvn clean package -Dmaven.test.skip=true -f pom.xml
 
 # 运行jar包
-java -jar yudao-server/target/yudao-server.jar --spring.profiles.active=local
+java -jar aios-server/target/aios-server.jar --spring.profiles.active=local
 ```
 
 ### 2.2 前端项目启动
@@ -60,8 +60,8 @@ java -jar yudao-server/target/yudao-server.jar --spring.profiles.active=local
 #### 1. 克隆前端代码
 ```bash
 # 如果有单独的前端项目
-git clone https://github.com/YunaiV/ruoyi-vue-pro-admin.git
-cd ruoyi-vue-pro-admin
+git clone https://github.com/YunaiV/AIOS-admin.git
+cd AIOS-admin
 ```
 
 #### 2. 安装依赖
@@ -111,7 +111,7 @@ npm run build
 ## 4. 配置说明
 
 ### 4.1 数据库配置
-修改 `yudao-server/src/main/resources/application-local.yaml`：
+修改 `aios-server/src/main/resources/application-local.yaml`：
 
 ```yaml
 spring:
@@ -226,10 +226,8 @@ export MAVEN_OPTS="-Xms512m -Xmx1024m"
 
 ## 8. 相关资源
 
-- **官方文档**：https://doc.iocoder.cn/ruoyi-vue-pro/
-- **GitHub仓库**：https://github.com/YunaiV/ruoyi-vue-pro
-- **Gitee仓库**：https://gitee.com/zhijiantianya/ruoyi-vue-pro
-- **演示地址**：https://demo.iocoder.cn/
+- **GitHub仓库**：https://github.com/raychiu0202/AIOS
+- **项目文档**：请参考项目README和各模块文档
 
 ---
 

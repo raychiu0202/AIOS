@@ -1,8 +1,8 @@
-# ruoyi-vue-pro 项目概述
+# AIOS 项目概述
 
 ## 项目简介
 
-**ruoyi-vue-pro** 是一个基于 Spring Boot + MyBatis Plus + Vue3 的快速开发平台，采用最新技术栈开发。该项目是原若依（RuoYi）框架的增强版，提供了更丰富的功能模块和更完善的开发体验。
+**AIOS** 是一个基于 Spring Boot + MyBatis Plus + Vue3 的快速开发平台，采用最新技术栈开发。该项目是原若依（RuoYi）框架的增强版，提供了更丰富的功能模块和更完善的开发体验。
 
 ### 项目特色
 
@@ -49,9 +49,9 @@
 ## 项目结构
 
 ```
-ruoyi-vue-pro/
-├── yudao-dependencies/          # 依赖管理
-├── yudao-framework/            # 核心框架
+AIOS/
+├── aios-dependencies/          # 依赖管理
+├── aios-framework/            # 核心框架
 │   ├── yudao-common/           # 通用工具
 │   ├── yudao-spring-boot-starter-biz-data-permission/  # 数据权限
 │   ├── yudao-spring-boot-starter-biz-ip/               # IP解析
@@ -66,19 +66,19 @@ ruoyi-vue-pro/
 │   ├── yudao-spring-boot-starter-security/            # 安全认证
 │   ├── yudao-spring-boot-starter-test/                # 测试支持
 │   └── yudao-spring-boot-starter-web/                 # Web增强
-├── yudao-server/                # 主服务（启动入口）
-├── yudao-module-system/        # 系统管理模块
-├── yudao-module-infra/        # 基础设施模块
-├── yudao-module-member/       # 会员模块
-├── yudao-module-bpm/          # 工作流模块
-├── yudao-module-report/       # 报表模块
-├── yudao-module-mp/           # 公众号模块
-├── yudao-module-pay/          # 支付模块
-├── yudao-module-mall/         # 商城模块
-├── yudao-module-crm/          # CRM模块
-├── yudao-module-erp/          # ERP模块
-├── yudao-module-iot/          # 物联网模块
-└── yudao-module-mes/          # 制造执行系统模块
+├── aios-server/                # 主服务（启动入口）
+├── aios-module-system/        # 系统管理模块
+├── aios-module-infra/        # 基础设施模块
+├── aios-module-member/       # 会员模块
+├── aios-module-bpm/          # 工作流模块
+├── aios-module-report/       # 报表模块
+├── aios-module-mp/           # 公众号模块
+├── aios-module-pay/          # 支付模块
+├── aios-module-mall/         # 商城模块
+├── aios-module-crm/          # CRM模块
+├── aios-module-erp/          # ERP模块
+├── aios-module-iot/          # 物联网模块
+└── aios-module-mes/          # 制造执行系统模块
 ```
 
 ## 核心功能
@@ -118,7 +118,7 @@ ruoyi-vue-pro/
 1. 确保已安装 JDK 1.8+、Maven 3.9+、MySQL 5.7+、Redis 6.0+
 2. 修改数据库配置文件 `application-local.yaml`
 3. 导入数据库脚本到 MySQL
-4. 运行后端服务：`mvn spring-boot:run -pl yudao-server`
+4. 运行后端服务：`mvn spring-boot:run -pl aios-server`
 5. 启动前端服务：`npm install && npm run dev`
 
 ### 生产环境
@@ -154,9 +154,8 @@ ruoyi-vue-pro/
 ## 维护支持
 
 ### 问题反馈
-- GitHub Issues：https://github.com/YunaiV/ruoyi-vue-pro/issues
-- 官方文档：https://doc.iocoder.cn/ruoyi-vue-pro/
-- 交流群：请参考官方文档获取群信息
+- GitHub Issues：https://github.com/raychiu0202/AIOS/issues
+- 项目仓库：https://github.com/raychiu0202/AIOS
 
 ### 更新日志
 详见 `DOC_UPDATE_LOG.md`

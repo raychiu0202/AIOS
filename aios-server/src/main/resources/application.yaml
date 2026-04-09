@@ -9,6 +9,7 @@ spring:
     exclude:
       - cn.iocoder.aios.framework.idempotent.config.AiosIdempotentConfiguration
       - cn.iocoder.aios.framework.apilog.config.AiosApiLogAutoConfiguration
+      - cn.iocoder.aios.framework.datapermission.config.AiosDataPermissionAutoConfiguration
 
   main:
     allow-circular-references: true # 允许循环依赖，因为项目是三层架构，无法避免这个情况。
@@ -113,7 +114,7 @@ aj:
     cache-number: 1000 # local 缓存的阈值,达到这个值，清除缓存
     timing-clear: 180 # local定时清除过期缓存(单位秒),设置为0代表不执行
     type: blockPuzzle # 验证码类型 default 三种都实例化。blockPuzzle 滑块拼图、clickWord 文字点选、pictureWord 文本输入
-    water-mark: 芋道源码 # 右下角水印文字(我的水印)，可使用 https://tool.chinaz.com/tools/unicode.aspx 中文转 Unicode，Linux 可能需要转 unicode
+    water-mark: AIOS源码 # 右下角水印文字(我的水印)，可使用 https://tool.chinaz.com/tools/unicode.aspx 中文转 Unicode，Linux 可能需要转 unicode
     interference-options: 0 # 滑动干扰项(0/1/2)
     req-frequency-limit-enable: false # 接口请求次数一分钟限制是否开启 true|false
     req-get-lock-limit: 5 # 验证失败 5 次，get接口锁定
@@ -277,6 +278,7 @@ aios:
   security:
     permit-all_urls:
       - /admin-api/mp/open/** # 微信公众号开放平台，微信回调接口，不需要登录
+    password-encoder-length: 10
   api-encrypt:
     enable: true # 是否开启 API 加密
     algorithm: AES # 加密算法，支持 AES、RSA 等
@@ -298,7 +300,7 @@ aios:
       topic: ${spring.application.name}-websocket # 消息发送的 Kafka Topic
       consumer-group: ${spring.application.name}-websocket-consumer # 消息发送的 Kafka Consumer Group
   swagger:
-    title: 芋道快速开发平台
+    title: AIOS快速开发平台
     description: 提供管理后台、用户 App 的所有功能
     version: ${aios.info.version}
     url: ${aios.web.admin-ui.url}

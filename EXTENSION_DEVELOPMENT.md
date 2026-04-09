@@ -1,4 +1,4 @@
-# ruoyi-vue-pro 功能扩展开发指南
+# AIOS 功能扩展开发指南
 
 ## 1. 开发环境准备
 
@@ -35,23 +35,23 @@
 
 ### 2.1 核心目录结构
 ```
-ruoyi-vue-pro/
-├── yudao-dependencies/          # 依赖管理 BOM
-├── yudao-framework/            # 核心框架
-│   ├── yudao-common/           # 通用工具类
-│   ├── yudao-spring-boot-starter-*/  # 各种增强starter
-├── yudao-server/               # 主启动模块
+AIOS/
+├── aios-dependencies/          # 依赖管理 BOM
+├── aios-framework/            # 核心框架
+│   ├── aios-common/           # 通用工具类
+│   ├── aios-spring-boot-starter-*/  # 各种增强starter
+├── aios-server/               # 主启动模块
 │   ├── src/main/java/cn/iocoder/yudao/server/
-│   │   ├── RuoyiApplication.java  # 启动类
+│   │   ├── AiosApplication.java  # 启动类
 │   │   ├── config/               # 配置类
 │   │   └── framework/            # 框架增强
-├── yudao-module-*/             # 业务模块
+├── aios-module-*/             # 业务模块
 └── sql/                        # 数据库脚本
 ```
 
 ### 2.2 模块说明
 
-#### yudao-framework
+#### aios-framework
 框架核心模块，包含：
 - 通用工具类
 - 数据库增强
@@ -59,7 +59,7 @@ ruoyi-vue-pro/
 - 安全增强
 - Web增强
 
-#### yudao-module-system
+#### aios-module-system
 系统管理模块，包含：
 - 用户管理
 - 角色管理
@@ -68,7 +68,7 @@ ruoyi-vue-pro/
 - 字典管理
 - 参数管理
 
-#### yudao-module-infra
+#### aios-module-infra
 基础设施模块，包含：
 - 文件管理
 - 代码生成
@@ -82,9 +82,9 @@ ruoyi-vue-pro/
 
 #### 1. 创建模块目录
 ```bash
-mkdir -p yudao-module-demo
-mkdir -p yudao-module-demo/src/main/java/cn/iocoder/yudao/module/demo
-mkdir -p yudao-module-demo/src/main/resources/mapper/demo
+mkdir -p aios-module-demo
+mkdir -p aios-module-demo/src/main/java/cn/iocoder/yudao/module/demo
+mkdir -p aios-module-demo/src/main/resources/mapper/demo
 ```
 
 #### 2. 创建pom.xml
@@ -100,7 +100,7 @@ mkdir -p yudao-module-demo/src/main/resources/mapper/demo
         <artifactId>yudao</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>yudao-module-demo</artifactId>
+    <artifactId>aios-module-demo</artifactId>
     <packaging>jar</packaging>
     
     <name>${project.artifactId}</name>
@@ -110,21 +110,21 @@ mkdir -p yudao-module-demo/src/main/resources/mapper/demo
         <!-- 核心依赖 -->
         <dependency>
             <groupId>cn.iocoder.boot</groupId>
-            <artifactId>yudao-framework</artifactId>
+            <artifactId>aios-framework</artifactId>
             <version>${revision}</version>
         </dependency>
         
         <!-- Web依赖 -->
         <dependency>
             <groupId>cn.iocoder.boot</groupId>
-            <artifactId>yudao-spring-boot-starter-web</artifactId>
+            <artifactId>aios-spring-boot-starter-web</artifactId>
             <version>${revision}</version>
         </dependency>
         
         <!-- 数据库依赖 -->
         <dependency>
             <groupId>cn.iocoder.boot</groupId>
-            <artifactId>yudao-spring-boot-starter-mybatis</artifactId>
+            <artifactId>aios-spring-boot-starter-mybatis</artifactId>
             <version>${revision}</version>
         </dependency>
     </dependencies>
@@ -135,7 +135,7 @@ mkdir -p yudao-module-demo/src/main/resources/mapper/demo
 ```xml
 <modules>
     <!-- 其他模块 -->
-    <module>yudao-module-demo</module>
+    <module>aios-module-demo</module>
 </modules>
 ```
 
@@ -143,7 +143,7 @@ mkdir -p yudao-module-demo/src/main/resources/mapper/demo
 
 #### 目录结构
 ```
-yudao-module-demo/
+aios-module-demo/
 ├── src/main/java/cn/iocoder/yudao/module/demo/
 │   ├── controller/
 │   │   └── DemoController.java
@@ -310,7 +310,7 @@ public class DemoController {
 ```yaml
 yudao:
   codegen:
-    base-package: cn.iocoder.yudao.module.demo
+    base-package: cn.iocoder.aios.module.demo
     db-schemas: ry_vue
     front-type: 20
     vo-type: 10
@@ -628,7 +628,7 @@ class DemoControllerTest {
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <configuration>
-                <mainClass>cn.iocoder.yudao.server.RuoyiApplication</mainClass>
+                <mainClass>cn.iocoder.aios.server.AiosApplication</mainClass>
                 <layout>JAR</layout>
                 <excludes>
                     <exclude>
@@ -646,7 +646,7 @@ class DemoControllerTest {
 
 ```dockerfile
 FROM openjdk:8-jre-alpine
-COPY target/yudao-server.jar app.jar
+COPY target/aios-server.jar app.jar
 EXPOSE 48080
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 ```

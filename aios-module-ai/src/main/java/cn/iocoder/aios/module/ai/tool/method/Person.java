@@ -6,7 +6,7 @@ package cn.iocoder.aios.module.ai.tool.method;
  * Represents a person with basic information.
  * This is an immutable record.
  */
-public record Person(
+public static class Person(
         int id,
         String firstName,
         String lastName,

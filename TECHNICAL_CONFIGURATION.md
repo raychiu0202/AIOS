@@ -1,4 +1,4 @@
-# ruoyi-vue-pro 技术配置详解
+# AIOS 技术配置详解
 
 ## 1. 项目配置
 
@@ -10,7 +10,7 @@
 ```yaml
 spring:
   application:
-    name: yudao-server
+    name: aios-server
   profiles:
     active: local
   main:
@@ -63,7 +63,7 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
     banner: false
-  type-aliases-package: ${yudao.info.base-package}.module.*.dal.dataobject
+  type-aliases-package: ${aios.info.base-package}.module.*.dal.dataobject
 ```
 
 #### Sa-Token配置
@@ -397,9 +397,9 @@ public class ScheduledTask {
 ```java
 @EnableScheduling
 @SpringBootApplication
-public class RuoyiApplication {
+public class AiosApplication {
     public static void main(String[] args) {
-        SpringApplication.run(RuoyiApplication.class, args);
+        SpringApplication.run(AiosApplication.class, args);
     }
 }
 ```
@@ -429,7 +429,7 @@ curl http://localhost:48080/actuator/health
 ```yaml
 logging:
   level:
-    cn.iocoder.yudao.module.system: debug
+    cn.iocoder.aios.module.system: debug
     org.springframework: warn
 ```
 

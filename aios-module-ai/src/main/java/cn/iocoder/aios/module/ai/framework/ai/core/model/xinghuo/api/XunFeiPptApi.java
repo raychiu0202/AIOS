@@ -255,7 +255,7 @@ public class XunFeiPptApi {
      * 模板列表响应
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record TemplatePageResponse(
+    public static class TemplatePageResponse(
             boolean flag,
             int code,
             String desc,
@@ -268,7 +268,7 @@ public class XunFeiPptApi {
      * 模板列表数据
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record TemplatePageData(
+    public static class TemplatePageData(
             String total,
             List<TemplateInfo> records,
             Integer pageNum
@@ -279,7 +279,7 @@ public class XunFeiPptApi {
      * 模板信息
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record TemplateInfo(
+    public static class TemplateInfo(
             String templateIndexId,
             Integer pageCount,
             String type,
@@ -294,7 +294,7 @@ public class XunFeiPptApi {
      * 创建响应
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record CreateResponse(
+    public static class CreateResponse(
             boolean flag,
             int code,
             String desc,
@@ -307,7 +307,7 @@ public class XunFeiPptApi {
      * 创建响应数据
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record CreateResponseData(
+    public static class CreateResponseData(
             String sid,
             String coverImgSrc,
             String title,
@@ -320,7 +320,7 @@ public class XunFeiPptApi {
      * 大纲数据结构
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record OutlineData(
+    public static class OutlineData(
             String title,
             String subTitle,
             List<Chapter> chapters
@@ -330,20 +330,38 @@ public class XunFeiPptApi {
          * 章节结构
          */
         @JsonInclude(value = JsonInclude.Include.NON_NULL)
-        public record Chapter(
-                String chapterTitle,
-                List<ChapterContent> chapterContents
-        ) {
+        public static class Chapter {
+            private String chapterTitle;
+            private List<ChapterContent> chapterContents;
+
+            public Chapter(String chapterTitle, List<ChapterContent> chapterContents) {
+                this.chapterTitle = chapterTitle;
+                this.chapterContents = chapterContents;
+            }
+
+            public String getChapterTitle() {
+                return chapterTitle;
+            }
+
+            public List<ChapterContent> getChapterContents() {
+                return chapterContents;
+            }
 
             /**
              * 章节内容
              */
             @JsonInclude(value = JsonInclude.Include.NON_NULL)
-            public record ChapterContent(
-                    String chapterTitle
-            ) {
-            }
+            public static class ChapterContent {
+                private String chapterTitle;
 
+                public ChapterContent(String chapterTitle) {
+                    this.chapterTitle = chapterTitle;
+                }
+
+                public String getChapterTitle() {
+                    return chapterTitle;
+                }
+            }
         }
 
         /**
@@ -360,28 +378,95 @@ public class XunFeiPptApi {
      * 进度响应
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record ProgressResponse(
-            int code,
-            String desc,
-            ProgressResponseData data
-    ) {
+    public static class ProgressResponse {
+        private int code;
+        private String desc;
+        private ProgressResponseData data;
+
+        public ProgressResponse(int code, String desc, ProgressResponseData data) {
+            this.code = code;
+            this.desc = desc;
+            this.data = data;
+        }
+
+        public int getCode() {
+            return code;
+        }
+
+        public String getDesc() {
+            return desc;
+        }
+
+        public ProgressResponseData getData() {
+            return data;
+        }
     }
 
     /**
      * 进度响应数据
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record ProgressResponseData(
-            int process,
-            String pptId,
-            String pptUrl,
-            String pptStatus,
-            String aiImageStatus,
-            String cardNoteStatus,
-            String errMsg,
-            Integer totalPages,
-            Integer donePages
-    ) {
+    public static class ProgressResponseData {
+        private int process;
+        private String pptId;
+        private String pptUrl;
+        private String pptStatus;
+        private String aiImageStatus;
+        private String cardNoteStatus;
+        private String errMsg;
+        private Integer totalPages;
+        private Integer donePages;
+
+        public ProgressResponseData(int process, String pptId, String pptUrl, String pptStatus,
+                                 String aiImageStatus, String cardNoteStatus, String errMsg,
+                                 Integer totalPages, Integer donePages) {
+            this.process = process;
+            this.pptId = pptId;
+            this.pptUrl = pptUrl;
+            this.pptStatus = pptStatus;
+            this.aiImageStatus = aiImageStatus;
+            this.cardNoteStatus = cardNoteStatus;
+            this.errMsg = errMsg;
+            this.totalPages = totalPages;
+            this.donePages = donePages;
+        }
+
+        public int getProcess() {
+            return process;
+        }
+
+        public String getPptId() {
+            return pptId;
+        }
+
+        public String getPptUrl() {
+            return pptUrl;
+        }
+
+        public String getPptStatus() {
+            return pptStatus;
+        }
+
+        public String getAiImageStatus() {
+            return aiImageStatus;
+        }
+
+        public String getCardNoteStatus() {
+            return cardNoteStatus;
+        }
+
+        public String getErrMsg() {
+            return errMsg;
+        }
+
+        public Integer getTotalPages() {
+            return totalPages;
+        }
+
+        public Integer getDonePages() {
+            return donePages;
+        }
+    }
 
         /**
          * 是否全部完成
@@ -422,7 +507,7 @@ public class XunFeiPptApi {
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
     @Builder
-    public record CreatePptByOutlineRequest(
+    public static class CreatePptByOutlineRequest(
             String query,                // 用户生成PPT要求（最多8000字）
             String outlineSid,           // 已生成大纲后，响应返回的请求大纲唯一id
             OutlineData outline,         // 大纲内容
@@ -502,7 +587,7 @@ public class XunFeiPptApi {
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
     @Builder
-    public record CreatePptRequest(
+    public static class CreatePptRequest(
             String query,                // 用户生成PPT要求（最多8000字）
             MultipartFile file,          // 上传文件
             String fileUrl,              // 文件地址

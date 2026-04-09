@@ -97,7 +97,7 @@ public class SiliconFlowImageApi {
 
 	// @formatter:off
 	@JsonInclude(JsonInclude.Include.NON_NULL)
-	public record SiliconflowImageRequest (
+	public static class SiliconflowImageRequest (
 			@JsonProperty("prompt") String prompt,
 			@JsonProperty("model") String model,
 			@JsonProperty("batch_size") Integer batchSize,

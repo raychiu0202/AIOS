@@ -188,12 +188,12 @@ public class AiosTenantAutoConfiguration {
     @Primary // 引入租户时，tenantRedisCacheManager 为主 Bean
     public RedisCacheManager tenantRedisCacheManager(RedisTemplate<String, Object> redisTemplate,
                                                      RedisCacheConfiguration redisCacheConfiguration,
-                                                     AiosCacheProperties yudaoCacheProperties,
+                                                     AiosCacheProperties aiosCacheProperties,
                                                      TenantProperties tenantProperties) {
         // 创建 RedisCacheWriter 对象
         RedisConnectionFactory connectionFactory = Objects.requireNonNull(redisTemplate.getConnectionFactory());
         RedisCacheWriter cacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(connectionFactory,
-                BatchStrategies.scan(yudaoCacheProperties.getRedisScanBatchSize()));
+                BatchStrategies.scan(aiosCacheProperties.getRedisScanBatchSize()));
         // 创建 TenantRedisCacheManager 对象
         return new TenantRedisCacheManager(cacheWriter, redisCacheConfiguration, tenantProperties.getIgnoreCaches());
     }

@@ -216,7 +216,7 @@ public class WenDuoDuoPptApi {
      * 创建 Token 请求参数
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record CreateTokenRequest(
+    public static class CreateTokenRequest(
             String apiKey,
             String uid,
             Integer limit
@@ -232,7 +232,7 @@ public class WenDuoDuoPptApi {
      * API 通用响应
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record ApiResponse(
+    public static class ApiResponse(
             Integer code,
             String message,
             Map<String, Object> data
@@ -243,7 +243,7 @@ public class WenDuoDuoPptApi {
      * 创建任务
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record CreateTaskRequest(
+    public static class CreateTaskRequest(
             Integer type,
             String content,
             List<MultipartFile> files
@@ -254,7 +254,7 @@ public class WenDuoDuoPptApi {
      * 生成大纲内容请求
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record CreateOutlineRequest(
+    public static class CreateOutlineRequest(
             String id,
             String length,
             String scene,
@@ -268,7 +268,7 @@ public class WenDuoDuoPptApi {
      * 修改大纲内容请求
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record UpdateOutlineRequest(
+    public static class UpdateOutlineRequest(
             String id,
             String markdown,
             String question
@@ -279,7 +279,7 @@ public class WenDuoDuoPptApi {
      * 生成 PPT 请求参数
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record PptCreateRequest(
+    public static class PptCreateRequest(
             String id,
             String templateId,
             String markdown
@@ -290,7 +290,7 @@ public class WenDuoDuoPptApi {
      * PPT 信息
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record PptInfo(
+    public static class PptInfo(
             String id,
             String name,
             String subject,
@@ -314,7 +314,7 @@ public class WenDuoDuoPptApi {
      * 模板查询请求参数
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record TemplateQueryRequest(
+    public static class TemplateQueryRequest(
             int page,
             int size,
             Filter filters
@@ -324,7 +324,7 @@ public class WenDuoDuoPptApi {
          * 模板查询过滤条件
          */
         @JsonInclude(value = JsonInclude.Include.NON_NULL)
-        public record Filter(
+        public static class Filter(
                 int type,
                 String category,
                 String style,
@@ -338,7 +338,7 @@ public class WenDuoDuoPptApi {
      * PPT模板分页信息
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record PagePptTemplateInfo(
+    public static class PagePptTemplateInfo(
             List<PptTemplateInfo> data,
             String total
     ) {
@@ -348,7 +348,7 @@ public class WenDuoDuoPptApi {
      * PPT模板信息
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record PptTemplateInfo(
+    public static class PptTemplateInfo(
             String id,
             int type,
             Integer subType,

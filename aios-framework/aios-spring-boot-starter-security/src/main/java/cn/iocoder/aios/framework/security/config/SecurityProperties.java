@@ -46,6 +46,7 @@ public class SecurityProperties {
 
     /**
      * PasswordEncoder 加密复杂度，越高开销越大
+     * BCryptPasswordEncoder 的 strength 范围是 4-31
      */
-    private Integer passwordEncoderLength = 64;
+    private Integer passwordEncoderLength = 10;
 }

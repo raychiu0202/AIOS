@@ -180,7 +180,7 @@ public class MidjourneyApi {
      * @param properties 扩展字段
      * @param result 任务ID
      */
-    public record SubmitResponse(String code,
+    public static class SubmitResponse(String code,
                                  String description,
                                  Map<String, Object> properties,
                                  String result) {
@@ -204,7 +204,7 @@ public class MidjourneyApi {
      * @param failReason 失败原因
      * @param buttons 任务完成后的可执行按钮
      */
-    public record Notify(String id,
+    public static class Notify(String id,
                          String action,
                          String status,
 
@@ -234,7 +234,7 @@ public class MidjourneyApi {
      * @param type 类型，系统内部使用
      * @param style 样式: 2（Primary）、3（Green）
      */
-    public record Button(String customId,
+    public static class Button(String customId,
                          String emoji,
                          String label,
                          String type,

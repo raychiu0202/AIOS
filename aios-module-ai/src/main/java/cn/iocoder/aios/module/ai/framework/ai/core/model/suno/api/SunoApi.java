@@ -112,7 +112,7 @@ public class SunoApi {
      * @param makeInstrumental 指示音乐音频是否为定制，如果为 true，则从歌词生成，否则从提示生成
      */
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
-    public record MusicGenerateRequest(
+    public static class MusicGenerateRequest(
             String prompt,
             String tags,
             String title,
@@ -153,7 +153,7 @@ public class SunoApi {
      * @param tags                 音乐类型标签
      * @param duration             音乐时长
      */
-    public record MusicData(
+    public static class MusicData(
             String id,
             String title,
             @JsonProperty("image_url") String imageUrl,
@@ -179,7 +179,7 @@ public class SunoApi {
      * @param title  标题
      * @param status 状态
      */
-    public record LyricsData(
+    public static class LyricsData(
             String text,
             String title,
             String status
@@ -189,7 +189,7 @@ public class SunoApi {
     /**
      * Suno API 响应的限额数据，目前每日免费 50
      */
-    public record LimitUsageData(
+    public static class LimitUsageData(
             @JsonProperty("credits_left") Long creditsLeft,
             String period,
             @JsonProperty("monthly_limit") Long monthlyLimit,

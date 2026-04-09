@@ -1,4 +1,4 @@
-cn.iocoder.yudao.framework.idempotent.config.YudaoIdempotentConfiguration
-cn.iocoder.yudao.framework.lock4j.config.YudaoLock4jConfiguration
-cn.iocoder.yudao.framework.ratelimiter.config.YudaoRateLimiterConfiguration
-cn.iocoder.yudao.framework.signature.config.YudaoApiSignatureAutoConfiguration
+cn.iocoder.aios.framework.idempotent.config.AiosIdempotentConfiguration
+cn.iocoder.aios.framework.lock4j.config.AiosLock4jConfiguration
+cn.iocoder.aios.framework.ratelimiter.config.AiosRateLimiterConfiguration
+cn.iocoder.aios.framework.signature.config.AiosApiSignatureAutoConfiguration

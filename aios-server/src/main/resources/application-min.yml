@@ -1,0 +1,71 @@
+server:
+  port: 48080
+
+spring:
+  profiles:
+    active: min
+  application:
+    name: aios-server
+
+  # 最小配置，不包含数据权限
+  autoconfigure:
+    exclude:
+      - cn.iocoder.aios.framework.idempotent.config.AiosIdempotentConfiguration
+      - cn.iocoder.aios.framework.apilog.config.AiosApiLogAutoConfiguration
+      - cn.iocoder.aios.framework.datapermission.config.AiosDataPermissionAutoConfiguration
+
+  main:
+    allow-circular-references: true
+
+# 数据库配置
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/ruoyi?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+          username: root
+          password: root
+        slave:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/ruoyi?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+          username: root
+          password: root
+
+# Redis配置
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 10s
+      lettuce:
+        pool:
+          max-active: 200
+          max-wait: -1ms
+          max-idle: 10
+          min-idle: 0
+
+# MyBatis Plus配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: NONE
+    banner: false
+  type-aliases-package: cn.iocoder.aios.module.*.dal.dataobject
+
+# 芋道配置
+aios:
+  info:
+    version: 1.0.0
+    base-package: cn.iocoder.aios
+  web:
+    admin-ui:
+      url: http://dashboard.aios.iocoder.cn
+  security:
+    permit-all_urls:
+      - /admin-api/mp/open/**

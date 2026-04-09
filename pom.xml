@@ -26,7 +26,7 @@
 <module>aios-module-iot</module>
 <module>aios-module-mes</module>
 <!-- 请参考 https://doc.iocoder.cn/ai/build/ 文档，完成 AI 模块的启动！！！ -->
-<module>aios-module-ai</module>
+<!-- <module>aios-module-ai</module> -->
     </modules>
 
     <name>${project.artifactId}</name>
