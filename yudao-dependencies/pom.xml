@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.iocoder.boot</groupId>
-    <artifactId>yudao-dependencies</artifactId>
+    <artifactId>aios-dependencies</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
@@ -131,17 +131,17 @@
             </dependency>
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-biz-tenant</artifactId>
+                <artifactId>aios-spring-boot-starter-biz-tenant</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-biz-data-permission</artifactId>
+                <artifactId>aios-spring-boot-starter-biz-data-permission</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-biz-ip</artifactId>
+                <artifactId>aios-spring-boot-starter-biz-ip</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -156,19 +156,19 @@
             <!-- Web 相关 -->
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-web</artifactId>
+                <artifactId>aios-spring-boot-starter-web</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-security</artifactId>
+                <artifactId>aios-spring-boot-starter-security</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-websocket</artifactId>
+                <artifactId>aios-spring-boot-starter-websocket</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -186,7 +186,7 @@
             <!-- DB 相关 -->
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-mybatis</artifactId>
+                <artifactId>aios-spring-boot-starter-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -255,7 +255,7 @@
 
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-redis</artifactId>
+                <artifactId>aios-spring-boot-starter-redis</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -308,14 +308,14 @@
             <!-- Job 定时任务相关 -->
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-job</artifactId>
+                <artifactId>aios-spring-boot-starter-job</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <!-- 消息队列相关 -->
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-mq</artifactId>
+                <artifactId>aios-spring-boot-starter-mq</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
@@ -327,7 +327,7 @@
             <!-- 服务保障相关 -->
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-protection</artifactId>
+                <artifactId>aios-spring-boot-starter-protection</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -346,7 +346,7 @@
             <!-- 监控相关 -->
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-monitor</artifactId>
+                <artifactId>aios-spring-boot-starter-monitor</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -411,7 +411,7 @@
             <!-- Test 测试相关 -->
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-test</artifactId>
+                <artifactId>aios-spring-boot-starter-test</artifactId>
                 <version>${revision}</version>
                 <scope>test</scope>
             </dependency>
@@ -466,13 +466,13 @@
             <!-- 工具类相关 -->
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-common</artifactId>
+                <artifactId>aios-common</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>cn.iocoder.boot</groupId>
-                <artifactId>yudao-spring-boot-starter-excel</artifactId>
+                <artifactId>aios-spring-boot-starter-excel</artifactId>
                 <version>${revision}</version>
             </dependency>
 

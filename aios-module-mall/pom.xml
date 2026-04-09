@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>aios</artifactId>
+        <groupId>cn.iocoder.boot</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aios-module-mall</artifactId>
+    <packaging>pom</packaging>
+
+    <name>${project.artifactId}</name>
+
+    <description>
+        商城大模块，由 product 商品、promotion 营销、trade 交易、statistics 统计等组成
+    </description>
+    <modules>
+        <module>aios-module-product</module>
+        <module>aios-module-promotion</module>
+        <module>aios-module-trade</module>
+        <module>aios-module-statistics</module>
+        <!--
+            特殊：为什么会有 aios-module-trade-api 呢？
+                aios-module-promotion 和 aios-module-trade 之间相互循环依赖，所以抽出 aios-module-trade-api 模块，这样：
+                1. aios-module-promotion 依赖 aios-module-trade-api
+                2. aios-module-trade 依赖 aios-module-promotion
+            从而不存在相互（循环）依赖，即 aios-module-trade => aios-module-promotion => aios-module-trade-api
+         -->
+        <module>aios-module-trade-api</module>
+    </modules>
+
+</project>

@@ -4,29 +4,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.iocoder.boot</groupId>
-    <artifactId>yudao</artifactId>
+    <artifactId>aios</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
     <modules>
         <module>aios-dependencies</module>
-        <module>yudao-framework</module>
+        <module>aios-framework</module>
         <!-- Server 主项目 -->
-        <module>yudao-server</module>
+        <module>aios-server</module>
         <!-- 各种 module 拓展 -->
-        <module>yudao-module-system</module>
-        <module>yudao-module-infra</module>
-<!--        <module>yudao-module-member</module>-->
-<!--        <module>yudao-module-bpm</module>-->
-<!--        <module>yudao-module-report</module>-->
-<!--        <module>yudao-module-mp</module>-->
-<!--        <module>yudao-module-pay</module>-->
-<!--        <module>yudao-module-mall</module>-->
-<!--        <module>yudao-module-crm</module>-->
-<!--        <module>yudao-module-erp</module>-->
-<!--        <module>yudao-module-iot</module>-->
-<!--        <module>yudao-module-mes</module>-->
+<module>aios-module-system</module>
+<module>aios-module-infra</module>
+<module>aios-module-member</module>
+<module>aios-module-bpm</module>
+<module>aios-module-report</module>
+<module>aios-module-mp</module>
+<module>aios-module-pay</module>
+<module>aios-module-mall</module>
+<module>aios-module-crm</module>
+<module>aios-module-erp</module>
+<module>aios-module-iot</module>
+<module>aios-module-mes</module>
 <!-- 请参考 https://doc.iocoder.cn/ai/build/ 文档，完成 AI 模块的启动！！！ -->
-<!--        <module>yudao-module-ai</module>-->
+<module>aios-module-ai</module>
     </modules>
 
     <name>${project.artifactId}</name>
