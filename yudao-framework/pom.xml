@@ -10,24 +10,39 @@
     </parent>
     <packaging>pom</packaging>
     <modules>
+        <!-- 原始 yudao 模块 -->
         <module>yudao-common</module>
         <module>yudao-spring-boot-starter-mybatis</module>
         <module>yudao-spring-boot-starter-redis</module>
         <module>yudao-spring-boot-starter-web</module>
         <module>yudao-spring-boot-starter-security</module>
         <module>yudao-spring-boot-starter-websocket</module>
-
         <module>yudao-spring-boot-starter-monitor</module>
         <module>yudao-spring-boot-starter-protection</module>
         <module>yudao-spring-boot-starter-job</module>
         <module>yudao-spring-boot-starter-mq</module>
-
         <module>yudao-spring-boot-starter-excel</module>
         <module>yudao-spring-boot-starter-test</module>
-
         <module>yudao-spring-boot-starter-biz-tenant</module>
         <module>yudao-spring-boot-starter-biz-data-permission</module>
         <module>yudao-spring-boot-starter-biz-ip</module>
+
+        <!-- 新的 aios 模块 -->
+        <module>aios-common</module>
+        <module>aios-spring-boot-starter-mybatis</module>
+        <module>aios-spring-boot-starter-redis</module>
+        <module>aios-spring-boot-starter-web</module>
+        <module>aios-spring-boot-starter-security</module>
+        <module>aios-spring-boot-starter-websocket</module>
+        <module>aios-spring-boot-starter-monitor</module>
+        <module>aios-spring-boot-starter-protection</module>
+        <module>aios-spring-boot-starter-job</module>
+        <module>aios-spring-boot-starter-mq</module>
+        <module>aios-spring-boot-starter-excel</module>
+        <module>aios-spring-boot-starter-test</module>
+        <module>aios-spring-boot-starter-biz-tenant</module>
+        <module>aios-spring-boot-starter-biz-data-permission</module>
+        <module>aios-spring-boot-starter-biz-ip</module>
     </modules>
 
     <artifactId>yudao-framework</artifactId>
